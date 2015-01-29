@@ -1,0 +1,4 @@
+include 'annotations', 'core', 'spring'
+
+rootProject.name = 'structurizr'
+

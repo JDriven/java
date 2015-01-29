@@ -1,0 +1,15 @@
+group = 'structurizr'
+
+dependencies {
+    compile project(':annotations')
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.hamcrest:hamcrest-core:1.3'
+}
+
+sourceSets {
+    test {
+        java {
+            srcDir 'test/unit'
+        }
+    }
+}

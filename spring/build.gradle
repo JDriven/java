@@ -1,0 +1,6 @@
+group = 'structurizr-spring'
+
+dependencies {
+    compile project(':core')
+    compile 'org.springframework:spring-context:4.0.6.RELEASE'
+}
