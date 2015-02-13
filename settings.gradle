@@ -1,4 +1,7 @@
-include 'annotations', 'core', 'spring'
+rootProject.name = 'structurizr'
 
-rootProject.name = 'structurizr-java'
-rootProject.buildFileName = 'structurizr-java.gradle'
+include 'structurizr-annotations'
+include 'structurizr-client'
+include 'structurizr-core'
+include 'structurizr-examples'
+include 'structurizr-spring'
