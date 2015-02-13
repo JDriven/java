@@ -1,4 +1,4 @@
-version = '1.0.1'
+version = '1.0.2'
 
 subprojects {
     apply plugin: 'java'
@@ -7,6 +7,7 @@ subprojects {
     sourceCompatibility = '1.8'
 
     version = rootProject.version
+    group = 'structurizr'
 
     repositories {
         jcenter()
@@ -27,8 +28,7 @@ subprojects {
 }
 
 project(':core') {
-    group = 'structurizr-core'
-	archivesBaseName = group
+	archivesBaseName = group + '-core'
 
     dependencies {
         compile project(':annotations')
@@ -46,13 +46,11 @@ project(':core') {
 }
 
 project(':annotations') {
-    group = 'structurizr-annotations'
-    archivesBaseName = group
+    archivesBaseName = group + '-annotations'
 }
 
 project(':spring') {
-    group = 'structurizr-spring'
-    archivesBaseName = group
+    archivesBaseName = group + '-spring'
 
     dependencies {
         compile project(':core')
