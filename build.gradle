@@ -1,0 +1,60 @@
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
+
+subprojects { proj ->
+
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+
+    description = 'Structurizr'
+    group = 'com.structurizr'
+    version = '0.1'
+
+    repositories {
+        mavenCentral()
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src'
+            }
+        }
+        test {
+            java {
+                srcDir 'test/unit'
+            }
+        }
+    }
+
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = 'UTF-8'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+
+    task sourceJar(type: Jar) {
+        from sourceSets.main.allJava
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+
+                artifact sourceJar {
+                    classifier "sources"
+                }
+            }
+        }
+        repositories {
+            maven {
+                url "$buildDir/repo"
+            }
+        }
+    }
+
+}
