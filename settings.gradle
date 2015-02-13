@@ -2,4 +2,3 @@ include 'annotations', 'core', 'spring'
 
 rootProject.name = 'structurizr-java'
 rootProject.buildFileName = 'structurizr-java.gradle'
-

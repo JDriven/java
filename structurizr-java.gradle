@@ -1,4 +1,4 @@
-version = '1.0.DEVELOPMENT'
+version = '1.0.1'
 
 subprojects {
     apply plugin: 'java'
@@ -27,7 +27,8 @@ subprojects {
 }
 
 project(':core') {
-    group = 'structurizr'
+    group = 'structurizr-core'
+	archivesBaseName = group
 
     dependencies {
         compile project(':annotations')
@@ -46,10 +47,12 @@ project(':core') {
 
 project(':annotations') {
     group = 'structurizr-annotations'
+    archivesBaseName = group
 }
 
 project(':spring') {
     group = 'structurizr-spring'
+    archivesBaseName = group
 
     dependencies {
         compile project(':core')
